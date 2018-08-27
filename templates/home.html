@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Shorten Url{% endblock %}
+{% block content %}
+<br>
+        {% if status==2 %}
+		<h3>Page not found!!</h3>
+        <br>
+        {% endif %}
+		<h5>Shorten Url</h5>
+        <br>
+
+        <form class="form-inline my-2 my-lg-0" action="{{ url_for('home')}}" method="POST">
+            <input class="form-control form-control-lg mr-sm-2 col-md-6" placeholder="Long Address" type="text" name="LongAddr">
+            <button class="btn btn-success btn-lg my-2 my-sm-0" type="submit">Shorten</button>
+        </form>
+        <br>
+        {% if status == 1 %}
+            <div class="alert alert-danger col-md-6" role="alert">
+                {{ LongAddr }} is not a valid URL!
+            </div>
+        {% endif %}
+        {% if ShortAddr != '' and LongAddr != '' %}
+        Long Address: <a href={{LongAddr}}>{{ LongAddr }}</a> <br><br>
+        Short Address: <a href={{LongAddr}}>{{ ShortAddr }}</a><br><br>
+            <input type="text" value={{ ShortAddr }} id="ShortAddr">
+            <button onclick="CopyToClipboard()">Copy</button>
+        {% endif %}
+        <br>
+{% endblock %}
