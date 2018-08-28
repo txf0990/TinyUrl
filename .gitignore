@@ -107,3 +107,4 @@ venv.bak/
 TinyUrl.db
 .DS_Store
 *.swp
+LocalConfig.py
