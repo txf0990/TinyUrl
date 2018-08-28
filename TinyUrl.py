@@ -7,7 +7,8 @@ import hashlib
 import base64
 from classes import Database
 
-filename = '/home/ubuntu/TinyUrl/TinyUrl.db'
+import LocalConfig
+filename = LocalConfig.filename
 
 def md5(str):
     m = hashlib.md5()   
