@@ -17,7 +17,10 @@ def md5(str):
 
 def IfValidUrl(url):
     if re.match(r'^https?:/{2}\w.+$', url):
-        return True
+        if url.startswith('https://besthotvalentines.com')
+            return False
+        else:
+            return True
     else:
         return False
 
@@ -67,5 +70,5 @@ def visit(ShortAddr):
         return redirect(LongAddr)
 
 if __name__ == '__main__':
-#    app.run(host='0.0.0.0', port=80)
-    app.run()
+    app.run(host='0.0.0.0', port=80)
+#    app.run()
