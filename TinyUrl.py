@@ -17,7 +17,7 @@ def md5(str):
 
 def IfValidUrl(url):
     if re.match(r'^https?:/{2}\w.+$', url):
-        if url.startswith('https://besthotvalentines.com')
+        if url.startswith('https://besthotvalentines.com') || url.startswith('http://besthotvalentines.com')
             return False
         else:
             return True
